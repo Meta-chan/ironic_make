@@ -1,12 +1,13 @@
 # Welcome to Ironic Make!
-Ironic Make is an unusual build system. It is...
+Ironic Make is an unusual build system. It...
+ - Consists of only one file – `build.bat`
  - Is specific to C and C++
- - Consists of one file – `build.bat`
- - Has small size and can be built in every repository
  - Automatically detects installed compilers
- - Requires no installed programs
+ - Has small size and can be built in every repository
+ - Can be fully customized for every repository
+ - Requires no installed programs (except of compilers of course)
  - Has literally no place to cause errors
- - Is very simple. Nothing can be simplier than double-clicking `build.bat`, can it?
+ - Is very simple. Nothing can be simpler than double-clicking `build.bat`, can it?
 
 # Supported compilers
  - Microsoft Visual Studio

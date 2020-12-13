@@ -1,26 +1,15 @@
 @echo off
-if "%1"=="" (
-	call :help
-	exit /b
-)
-if not "%2"=="" (
-	call :help
-	exit /b
-)
-if "%1"=="x86" (
-	set BUILD_ARCHITECTURE=x86
-	call :compile
-	exit /b
-)
-if "%1"=="amd64" (
-	set BUILD_ARCHITECTURE=amd64
-	call :compile
-	exit /b
-)
+if "%1"=="" call :help && goto end
+if not "%2"=="" call :help && goto end
+if "%1"=="x86" call :compile x86 && goto end
+if "%1"=="amd64" call :compile amd64 && goto end
 call :help
+:end
+for /f "delims=" %%r in ('echo %cmdcmdline% ^| find "\build.bat"') do pause
 exit /b
 
 :compile
+	set BUILD_ARCHITECTURE=%1
 	if not defined BUILD_VSDEVCMD_PATH (
 		if exist ironic_make_cache (
 			set /p BUILD_VSDEVCMD_PATH=<ironic_make_cache
