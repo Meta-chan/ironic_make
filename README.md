@@ -11,5 +11,6 @@ Ironic Make is an unusual build system. It...
 
 # Supported compilers
  - Microsoft Visual Studio
+ - MinGW
 
 ###### P.S. My code is not dirty, it is alternatively clean.
