@@ -47,9 +47,10 @@ set IMAKE_VERSION=0
 		)
 	)
 	call :source
-	for /f %%d in ('wmic logicaldisk get name ^| find ":"') do (
-		call :try_disk %%d
+	for %%d in (A B C D E F G H I J K L M N O P Q R S T U V W X Y Z) do (
+		call :try_disk %%d:
 		if not errorlevel 1 (
+			cd %IMAKE_DIRECTORY%
 			del ironic_make.c 2>nul
 			call :ironic_make %IMAKE_COMPILER% %IMAKE_ARCHITECTURE%
 			if not errorlevel 1 (
@@ -60,6 +61,7 @@ set IMAKE_VERSION=0
 			exit /b 1
 		)
 	)
+	cd %IMAKE_DIRECTORY%
 	del ironic_make.c 2>nul
 	echo Can not compile with specified compiler
 	call :pause
@@ -187,8 +189,8 @@ set IMAKE_VERSION=0
 	exit /b 0
 :line
 	set /a IMAKE_LINE_NUMBER=%IMAKE_LINE_NUMBER% + 1
-	if %IMAKE_LINE_NUMBER% lss 195 set IMAKE_LINE=
-	if %IMAKE_LINE_NUMBER% gtr 202 set IMAKE_LINE=
+	if %IMAKE_LINE_NUMBER% lss 197 set IMAKE_LINE=
+	if %IMAKE_LINE_NUMBER% gtr 204 set IMAKE_LINE=
 	if defined IMAKE_LINE echo %IMAKE_LINE% >> ironic_make.c
 	exit /b 0
 REM SOURCE

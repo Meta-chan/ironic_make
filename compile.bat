@@ -33,8 +33,8 @@ set IMAKE_VERSION=0
 	shift
 	goto :start
 	:main
-	for /f %%d in ('wmic logicaldisk get name ^| find ":"') do (
-		call :try_disk %%d
+	for %%d in (A B C D E F G H I J K L M N O P Q R S T U V W X Y Z) do (
+		call :try_disk %%d:
 		if not errorlevel 1 (
 			echo Compilation success
 			call :pause
