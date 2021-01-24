@@ -13,18 +13,18 @@ Ironic Make is an unusual build system. It...
    - Source of `ironic_make.exe` (Search for `REM SOURCE`)
    - Makefile (Search for `REM MAKEFILE`)
  - `ironic_make.c` \- source code of `ironic_make.exe`. Will be deleted as soon as `ironic_make.exe` is compiled.
- - `ironic_make.exe` \- main part of the build system. Reads `makefile` section of `build.bat` and performs building.
+ - `ironic_make.exe` \- main part of the build system. Reads `Makefile` section of `build.bat` and performs building.
  - `ironic_compilers` \- file used by `ironic_make.exe` to store information about detected compilers.
  - `ironic_make_dev.c` \- `ironic_make.c` used for development.
  
 # `build.bat` command line options
 Although `build.bat` and `ironic_simple_build.bat` are designed to be called from GUI, they may be called from command line. In this form, they accept options:
- - Nothing for first found compiler and architecture.
- - `vs` \- for Visual Studio compiler.
- - `gcc` \- for GNU compiler.
- - `x86` \- for x86 architecture.
- - `amd64` \- for amd64 architecture.
- - Everything for printing help message.
+ - Nothing for first found compiler and architecture
+ - `vs` \- for Visual Studio compiler
+ - `gcc` \- for GNU compiler
+ - `x86` \- for x86 architecture
+ - `amd64` \- for amd64 architecture
+ - Everything else for help
 
 # Makefile syntax
 The syntax is similar to GNU `make`, but much simpler. It has:
@@ -66,11 +66,11 @@ The syntax is similar to GNU `make`, but much simpler. It has:
 
 # `ironic_make.exe` comamnd line options
 If you want to use `ironic_make.exe` separately from `build.bat`, you may want to know about it's options:
- - Nothing for default build.
- - `vs`, `gcc`, `x86`, `amd64` same as for `build.bat`.
- - `version` for printing version.
- - `compile` for direct access to `compile` function, may be used after compiler and architecture options.
- - Everything else for printing help.
+ - Nothing for default build
+ - `vs`, `gcc`, `x86`, `amd64` same as for `build.bat`
+ - `version` for version
+ - `compile` for direct access to `compile` function, may be used after compiler and architecture options
+ - Everything else for help
 
 # Supported compilers
  - Microsoft Visual Studio
